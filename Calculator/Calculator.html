@@ -1,6 +1,9 @@
 <html>
     <head>
         <script>
+            function insert(num){
+                document.form.textview.value = document.form.textview.value+num
+            }
         </script>
         <style>
             *{
@@ -15,7 +18,7 @@
                 cursor: pointer;
             }
             .textview{
-                width: 220;
+                width: 217;
                 margin: 5;
                 font-size: 25;
                 padding: 5;
@@ -25,7 +28,7 @@
     <body>
         <div class="main">
             <form name ="form">
-                <input class="textview">
+                <input class="textview" name="textview">
                 
             </form>
             <table>
@@ -48,7 +51,7 @@
                     <td><input class="button" type="button" value="+"></td>
                 </tr>
                  <tr>
-                    <td><input class="button" type="button" value="1"></td>
+                    <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
                     <td><input class="button" type="button" value="2"></td>
                     <td><input class="button" type="button" value="3"></td>
                     <td><input class="button" type="button" value="="></td>
