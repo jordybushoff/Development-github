@@ -1,6 +1,7 @@
 <html>
     <head>
         <script>
+            
             function insert(num){
                 document.form.textview.value = document.form.textview.value+num
             }
@@ -56,9 +57,11 @@
                 background: linear-gradient(to right, #00edff, #ff00f3);
                 height: 100%;
             }
+          
         </style>
     </head>
     <body>
+        
         <div class="bg"></div>
         <div class="main">
             <form name ="form">
@@ -94,6 +97,7 @@
                     <td colspan=2><input class="button" style="width:106" type="button" value="0" onclick="insert(0)"></td>
                     <td><input class="button" type="button" value="." onclick="insert('.')"></td>
                 </tr>
+                
             </table>
         </div>
     </body>
