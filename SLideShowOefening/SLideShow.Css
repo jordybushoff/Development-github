@@ -1,0 +1,23 @@
+.toggle
+{
+  overflow: hidden;
+  transition: height .4s, padding .4s;
+}
+
+.toggle.is_hidden
+{
+  height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+div
+{
+  background: #1663d6;
+  color: #fff;
+  font: bold 20px sans-serif;
+  width: 300px;
+  text-align: center;
+  padding: 50px;
+  border-radius: 5px;
+}
