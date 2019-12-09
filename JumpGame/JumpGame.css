@@ -9,8 +9,12 @@
 }
 
 #ball{
-    max-width: 300px;
-    animation: animate 4s linear infinite;
+    max-width: 1px;
+    animation: animate 2s linear infinite;
+}
+
+#andereball{
+    
 }
 #keyframes animate
 {
