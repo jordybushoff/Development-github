@@ -11,49 +11,44 @@ function init()
 function doeIets()
 {
     fade(imgHolder,1000);
-    //fadeOut(imgHolder);
 }
-
-//Variable toevoegen om het + en - uit elkaar te halen voor de display van de knop.
 
 function fade(el, duration)
 {
     var s = el.style;
     var step = 25/(duration || 300);
+    var curOpa = 0;
     //console.log("wat is step: " + step);
     s.opacity = s.opacity || 1;
     
-    function fadeUit() 
+    function fadeOut() 
     {
-        //console.log("opacity: " + s.opacity)
-        if(s.opacity < 0)
+        console.log("START");
+        if(s.opacity <= 0)
         {
-             fadeIn();
+            fadeIn();   
         }
         else
         {
             s.opacity -= step;
-            setTimeout(fadeUit, 25);
+            setTimeout(fadeOut, 25);
         }
     }
-    fadeUit();
-    
-     function fadeIn() 
+    function fadeIn() 
     {
-        //console.log("opacity: " + s.opacity)
-        if(s.opacity > 1)
+        if(s.opacity >= 1)
         {
-            
+            console.log("STOP!");
         }
         else
         {
-            s.opacity += step;
+            curOpa += step;
+            s.opacity = curOpa;
+            console.log ("alle vars: " + s.opacity,step,curOpa);
             setTimeout(fadeIn, 25);
         }
     }
-    
-}
-
-
+    fadeOut();
+} 
 
 //(function fade() { (s.opacity -= step) < 0 ? s.display = "none" : setTimeout(fade, 25); })();
