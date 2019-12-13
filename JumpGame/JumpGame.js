@@ -1,3 +1,13 @@
+var canvas = document.querySelector('#myCanvas');
+var context = canvas.getContext('2d');
+
+var xPos = 0;
+var yPos = 0;
+
+context.rect(xPos, yPos, 50, 50);
+context.stroke();
+
+
 function Verander(){
   var canvas  = document.getElementById("myCanvas");
   var context = canvas.getContext('2d');
@@ -10,7 +20,7 @@ function Verander(){
     img.src = 'Ball.png';
     img.onload = function (e)
     {
-    context.drawImage(img, 1, 1);
+    context.drawImage(img, 10, 50);
     }
 }
 
