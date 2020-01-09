@@ -95,15 +95,14 @@ function draw() {
     
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
-        ctx.fillStyle = getRandomColor();
     }
     if(y + dy < ballRadius) {
         dy = -dy;
-        ctx.fillStyle = getRandomColor();
     }
     else if(y + dy > canvas.height-ballRadius) {
         if(x > paddleX && x < paddleX + paddleWidth) {
             dy = -dy;
+            ctx.fillStyle = getRandomColor();
         }
         else {
             alert("GAME OVER");
@@ -112,23 +111,17 @@ function draw() {
         }
     }
     
-    if(rightPressed) {
-        paddleX += 10;
-        if (paddleX + paddleWidth > canvas.width){
-            paddleX = canvas.width - paddleWidth;
-        }
+     if(rightPressed && paddleX < canvas.width-paddleWidth) {
+        paddleX += 7;
     }
-    else if(leftPressed) {
-        paddleX -= 10;
-        if (paddleX < 0){
-            paddleX = 0;
-        }
+    else if(leftPressed && paddleX > 0) {
+        paddleX -= 7;
     }
     
     x += dx;
     y += dy;
 }
-setInterval(draw, 10);
+var interval = setInterval(draw, 10);
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF'.split('');
