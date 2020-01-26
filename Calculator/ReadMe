@@ -1,11 +1,9 @@
-Dit project was zeer leerzaam voor mij want hierin behand ik wat moeilijkere behandelingen. 
-Als ik vast zat heb ik hulp gevraagd aan medestudenten en online gekeken.
+Dit project was mijn 3e project. Hierin heb ik geleerd hoe ik het idee van een calculator kan opbouwen vanaf niks. 
+Ik begreep de verbinding met css, html en javascript beter als mijn vorige 2 projecten. Ik kon goed te werk gaan.
 
--Kaarten aangegeven met letters in een array
--Aanmaken van nieuwe divs voor elke kaart
--Kaarten goed plaatsen in de canvas
--Kaarten plaatjes geven
--Functie voor het aanklikken van, omdraaien en 2e klikken
--Functie voor als ze gelijk zijn en wat als je dat niet zijn.
--Finish screen met opnieuw beginnen
--Functie voor het wisselen van de kaarten bij elke nieuwe bord
+-Knoppen maken met values
+-Functie berekenen
+-Functie clearen
+-Background gradient veranderen met random aangegeven values.
+-Functie met 1 stap terug van de opgegeven values in de textview
+
