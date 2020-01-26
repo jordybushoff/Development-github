@@ -15,13 +15,25 @@ var paddleX = (canvas.width-paddleWidth) / 2;
 var rightPressed = false;
 var leftPressed = false;
 
-var brickRowCount = 2;
-var brickColumnCount = 12;
-var brickWidth = 75;
+var brickRowCount = 3;
+var brickColumnCount = 14;
+var brickWidth = 77;
 var brickHeight = 20;
 var brickPadding = 10;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
+
+var score = 0;
+
+btn = document.getElementById("startBtn");
+
+btn.onclick = function setup() {
+    btn.remove();
+    //alert("Function Setup!");
+    document.getElementById("myCanvas").innerHTML = '<canvas id="myCanvas" width="1280" height="720"></canvas>';
+    var interval = setInterval(drawGame, 10);    
+    drawGame();
+}
 
 var bricks = [];
 for(var c=0; c<brickColumnCount; c++) {
@@ -33,6 +45,7 @@ for(var c=0; c<brickColumnCount; c++) {
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+
 
 function keyDownHandler(e) {
     if(e.key == "Right" || e.key == "ArrowRight") {
@@ -60,10 +73,16 @@ function collisionDetection() {
                 if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
                     dy = -dy;
                     b.status = 0;
+                    score += 10;    
+                    document.getElementById('score').innerHTML = score;
                 }
             }
         }
     }
+}
+
+function GameMenu(){
+    
 }
 
 function drawBall() {
@@ -101,12 +120,14 @@ function drawBricks() {
 }
 
 
-function draw() {
+
+function drawGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
     drawBricks();  
     collisionDetection();
+    
    
     
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
@@ -121,7 +142,7 @@ function draw() {
             ctx.fillStyle = getRandomColor();
         }
         else {
-            alert("GAME OVER");
+           //alert("GAME OVER");
             document.location.reload();
             clearInterval(interval); // Needed for Chrome to end game
         }
@@ -136,8 +157,13 @@ function draw() {
     
     x += dx;
     y += dy;
+    
+   
 }
-var interval = setInterval(draw, 10);
+
+
+
+
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF'.split('');
@@ -147,3 +173,5 @@ function getRandomColor() {
     }
     return color;
 }
+
+
